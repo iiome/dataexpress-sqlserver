@@ -12,7 +12,7 @@ version := "0.9.0"
 
 organization := "edu.chop.cbmi"
 
-scalaVersion := "2.9.1"
+scalaVersion := "2.10.0"
 
 //assembly options
 
@@ -24,15 +24,16 @@ assembleArtifact in packageScala := false
 
 //compile dependencies------------------------------
 
-//libraryDependencies ++= Seq(
-//  "org.xerial" % "sqlite-jdbc" % "3.7.2",
-//)
+libraryDependencies ++= Seq(
+  "edu.chop.cbmi" % "dataexpress_2.10" % "0.9.0.6"
+)
 
 //test dependencies------------------------------
 
 libraryDependencies ++= {
   val deps = Seq(
-        "org.scalatest" % "scalatest_2.9.1" % "1.7.2"
+        "org.scalatest" %% "scalatest" % "2.0.M5b",
+        "junit" % "junit" % "4.8.1"
       )
   deps map {v => v % "test"}
 }
